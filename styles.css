@@ -133,10 +133,12 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--spacing-sm);
     padding: 0.875rem 1.75rem;
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: var(--color-bg);
-    font-weight: 600;
+    color: #000000;
+    font-weight: 700;
     font-size: 0.95rem;
     border-radius: var(--radius-md);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     transition: all var(--transition-base);
     box-shadow: 0 4px 20px var(--color-primary-glow);
 }

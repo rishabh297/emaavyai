@@ -138,6 +138,20 @@ async function handleFormSubmit(e) {
 }
 
 // -------------------- Navbar --------------------
+function closeMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (mobileMenu && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Make it globally available
+window.closeMobileMenu = closeMobileMenu;
+
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -177,15 +191,34 @@ function initNavbar() {
                 
                 mobileMenu.innerHTML = `
                     <div class="mobile-menu-content">
-                        <a href="${basePath}#features">Features</a>
-                        <a href="${basePath}#use-cases">Use Cases</a>
-                        <a href="${basePath}#how-it-works">How it Works</a>
-                        <a href="${basePath}#pricing">Pricing</a>
+                        <a href="${basePath}#features" class="mobile-nav-link">Features</a>
+                        <a href="${basePath}#use-cases" class="mobile-nav-link">Use Cases</a>
+                        <a href="${basePath}#how-it-works" class="mobile-nav-link">How it Works</a>
+                        <a href="${basePath}#pricing" class="mobile-nav-link">Pricing</a>
                         <div class="mobile-menu-actions">
-                            <a href="contact.html" class="btn-primary btn-full">Get Started</a>
+                            <a href="#" class="btn-primary btn-full" data-open-modal>Get Started</a>
                         </div>
                     </div>
                 `;
+                
+                // Add click handlers to close menu when nav link is clicked
+                setTimeout(() => {
+                    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+                        link.addEventListener('click', () => {
+                            closeMobileMenu();
+                        });
+                    });
+                    
+                    // Handle Get Started button in mobile menu
+                    const getStartedBtn = mobileMenu.querySelector('[data-open-modal]');
+                    if (getStartedBtn) {
+                        getStartedBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            closeMobileMenu();
+                            openModal();
+                        });
+                    }
+                }, 0);
                 
                 // Add styles for mobile menu
                 const style = document.createElement('style');
@@ -226,6 +259,10 @@ function initNavbar() {
                         margin-top: 2rem;
                         padding-top: 2rem;
                         border-top: 1px solid var(--color-border);
+                    }
+                    .mobile-menu-actions .btn-primary {
+                        color: #000000 !important;
+                        font-weight: 700 !important;
                     }
                     .mobile-menu-btn.active span:nth-child(1) {
                         transform: rotate(45deg) translate(5px, 5px);
