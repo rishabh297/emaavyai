@@ -5,10 +5,137 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initFAQ();
-    initDemoForm();
+    initContactModal();
     initScrollAnimations();
     initSmoothScroll();
 });
+
+// -------------------- Contact Modal --------------------
+function openModal() {
+    const modal = document.getElementById('contactModal');
+    const modalForm = document.getElementById('modalForm');
+    const modalSuccess = document.getElementById('modalSuccess');
+    
+    if (modal) {
+        // Reset to form view
+        if (modalForm) modalForm.style.display = 'block';
+        if (modalSuccess) modalSuccess.style.display = 'none';
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('contactModal');
+    const form = document.getElementById('contactForm');
+    
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset form after animation
+        setTimeout(() => {
+            if (form) form.reset();
+            const modalForm = document.getElementById('modalForm');
+            const modalSuccess = document.getElementById('modalSuccess');
+            if (modalForm) modalForm.style.display = 'block';
+            if (modalSuccess) modalSuccess.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Make functions globally available
+window.openModal = openModal;
+window.closeModal = closeModal;
+
+function initContactModal() {
+    const modal = document.getElementById('contactModal');
+    const closeBtn = document.querySelector('.modal-close');
+    const form = document.getElementById('contactForm');
+    
+    if (!modal) return;
+    
+    // Handle all [data-open-modal] clicks via event delegation
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-open-modal]');
+        if (trigger) {
+            e.preventDefault();
+            openModal();
+        }
+    });
+    
+    // Close modal on close button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Close modal on overlay click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    // Handle form submission
+    if (form) {
+        form.addEventListener('submit', handleFormSubmit);
+    }
+}
+
+async function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    
+    // Show loading state
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'flex';
+    submitBtn.disabled = true;
+    
+    // Collect form data
+    const formData = new FormData(form);
+    
+    try {
+        // Submit to Formspree
+        const response = await fetch('https://formspree.io/f/maqngkre', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // Show success state
+            const modalForm = document.getElementById('modalForm');
+            const modalSuccess = document.getElementById('modalSuccess');
+            
+            modalForm.style.display = 'none';
+            modalSuccess.style.display = 'block';
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again or email us directly.');
+    } finally {
+        // Reset button state
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+    }
+}
 
 // -------------------- Navbar --------------------
 function initNavbar() {

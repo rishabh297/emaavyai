@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
     <!-- Navigation -->
@@ -31,7 +31,7 @@
                 <a href="#pricing">Pricing</a>
             </div>
             <div class="nav-actions">
-                <a href="contact.html" class="btn-primary">Get Started</a>
+                <a href="#" class="btn-primary" data-open-modal>Get Started</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
@@ -59,13 +59,13 @@
                 lead qualification and more. Just tell us what you need, we handle the rest.
             </p>
             <div class="hero-cta">
-                <a href="contact.html" class="btn-primary btn-large">
+                <a href="#" class="btn-primary btn-large" data-open-modal>
                     Talk to Us
                     <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <a href="contact.html" class="btn-secondary btn-large">
+                <a href="#" class="btn-secondary btn-large" data-open-modal>
                     <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M8 7L13 10L8 13V7Z" fill="currentColor"/>
@@ -428,8 +428,8 @@
                     <span>Make</span>
                 </div>
             </div>
-            <div class="integrations-cta">
-                <a href="#" class="btn-secondary">View All Integrations</a>
+            <div class="integrations-more">
+                <span>+ many more</span>
             </div>
         </div>
     </section>
@@ -457,7 +457,7 @@
                         <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Custom solution proposal</li>
                         <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>No commitment required</li>
                     </ul>
-                    <a href="contact.html" class="btn-secondary btn-full">Book a Call</a>
+                    <a href="#" class="btn-secondary btn-full" data-open-modal>Book a Call</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
@@ -476,7 +476,7 @@
                         <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Analytics dashboard</li>
                         <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Ongoing support & optimization</li>
                     </ul>
-                    <a href="contact.html" class="btn-primary btn-full">Get a Quote</a>
+                    <a href="#" class="btn-primary btn-full" data-open-modal>Get a Quote</a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-header">
@@ -494,7 +494,7 @@
                         <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>SLA guarantee</li>
                         <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Priority support & updates</li>
                     </ul>
-                    <a href="contact.html" class="btn-secondary btn-full">Contact Us</a>
+                    <a href="#" class="btn-secondary btn-full" data-open-modal>Contact Us</a>
                 </div>
             </div>
         </div>
@@ -573,11 +573,11 @@
                 <h2>Ready to Transform Your Business?</h2>
                 <p>Join hundreds of companies who trust Emaavy AI to build and manage their voice agents.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn-primary btn-large">
+                    <a href="#" class="btn-primary btn-large" data-open-modal>
                         Let's Talk
                         <svg viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
-                    <a href="contact.html" class="btn-secondary btn-large">Talk to Sales</a>
+                    <a href="#" class="btn-secondary btn-large" data-open-modal>Talk to Sales</a>
                 </div>
             </div>
         </div>
@@ -650,7 +650,97 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            
+            <!-- Form State -->
+            <div class="modal-content" id="modalForm">
+                <div class="modal-header">
+                    <h2>Let's Build Your <span class="gradient-text">AI Agent</span></h2>
+                    <p>Tell us about your needs and we'll get back to you within 24 hours.</p>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Acme Inc">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="use-case">Use Case *</label>
+                        <select id="use-case" name="use_case" required>
+                            <option value="">Select a use case...</option>
+                            <option value="recruitment-screening">Recruitment Screening</option>
+                            <option value="receptionist">Receptionist</option>
+                            <option value="appointment-setter">Appointment Setter</option>
+                            <option value="lead-qualification">Lead Qualification</option>
+                            <option value="customer-service">Customer Service</option>
+                            <option value="survey">Survey</option>
+                            <option value="debt-collection">Debt Collection</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us more about your needs *</label>
+                        <textarea id="message" name="message" placeholder="Describe your use case, expected call volume, and any specific requirements..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-full btn-large">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">
+                            <svg viewBox="0 0 24 24" fill="none" class="spinner"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.3"/><path d="M12 2C6.47715 2 2 6.47715 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            Sending...
+                        </span>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Success State -->
+            <div class="modal-content modal-success" id="modalSuccess" style="display: none;">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <h2>Thank You! <span class="gradient-text">We Got It.</span></h2>
+                <p>Your message has been received. Our team will review your requirements and get back to you within 24 hours.</p>
+                
+                <div class="success-steps">
+                    <h4>What happens next?</h4>
+                    <ul>
+                        <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>We'll review your requirements</li>
+                        <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>A team member will reach out within 24 hours</li>
+                        <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>We'll schedule a discovery call</li>
+                        <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Get a custom proposal for your AI agent</li>
+                    </ul>
+                </div>
+                
+                <button class="btn-primary btn-large" onclick="closeModal()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=4"></script>
 </body>
 </html>
 
