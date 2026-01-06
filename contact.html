@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Emaavy AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            background: var(--bg-primary);
+        }
+        
+        .contact-container {
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+        }
+        
+        .contact-form {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-group select {
+            cursor: pointer;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-actions {
+                display: none !important;
+            }
+            
+            .mobile-menu-btn {
+                display: flex !important;
+            }
+            
+            .contact-page {
+                padding: 100px 16px 40px;
+            }
+            
+            .contact-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .contact-header p {
+                font-size: 1rem;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+            
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.75rem;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            .submit-btn {
+                padding: 0.875rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-page {
+                padding: 90px 12px 30px;
+            }
+            
+            .contact-header {
+                margin-bottom: 2rem;
+            }
+            
+            .contact-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-header p {
+                font-size: 0.95rem;
+            }
+            
+            .contact-form {
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+            
+            .form-group label {
+                font-size: 0.9rem;
+            }
+            
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.75rem 0.875rem;
+                border-radius: 6px;
+            }
+            
+            .back-link {
+                margin-top: 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="8" fill="currentColor"/>
+                    <path d="M20 8V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Emaavy AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#use-cases">Use Cases</a>
+                <a href="index.html#how-it-works">How it Works</a>
+                <a href="index.html#pricing">Pricing</a>
+            </div>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn-primary">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="contact-page">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Let's Build Your <span class="gradient-text">AI Agent</span></h1>
+                <p>Tell us about your needs and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <form class="contact-form" action="https://formspree.io/f/maqngkre" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Acme Inc">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                </div>
+                
+                <div class="form-group">
+                    <label for="use-case">Use Case *</label>
+                    <select id="use-case" name="use_case" required>
+                        <option value="">Select a use case...</option>
+                        <option value="recruitment-screening">Recruitment Screening</option>
+                        <option value="receptionist">Receptionist</option>
+                        <option value="appointment-setter">Appointment Setter</option>
+                        <option value="lead-qualification">Lead Qualification</option>
+                        <option value="customer-service">Customer Service</option>
+                        <option value="survey">Survey</option>
+                        <option value="debt-collection">Debt Collection</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell us more about your needs *</label>
+                    <textarea id="message" name="message" placeholder="Describe your use case, expected call volume, and any specific requirements..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

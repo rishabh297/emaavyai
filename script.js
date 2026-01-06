@@ -43,16 +43,19 @@ function initNavbar() {
             if (!mobileMenu) {
                 mobileMenu = document.createElement('div');
                 mobileMenu.className = 'mobile-menu';
+                
+                // Check if we're on the contact page
+                const isContactPage = window.location.pathname.includes('contact');
+                const basePath = isContactPage ? 'index.html' : '';
+                
                 mobileMenu.innerHTML = `
                     <div class="mobile-menu-content">
-                        <a href="#features">Features</a>
-                        <a href="#use-cases">Use Cases</a>
-                        <a href="#how-it-works">How it Works</a>
-                        <a href="#pricing">Pricing</a>
-                        <a href="#">Docs</a>
+                        <a href="${basePath}#features">Features</a>
+                        <a href="${basePath}#use-cases">Use Cases</a>
+                        <a href="${basePath}#how-it-works">How it Works</a>
+                        <a href="${basePath}#pricing">Pricing</a>
                         <div class="mobile-menu-actions">
-                            <a href="#" class="btn-secondary btn-full">Log In</a>
-                            <a href="#" class="btn-primary btn-full">Get Started Free</a>
+                            <a href="contact.html" class="btn-primary btn-full">Get Started</a>
                         </div>
                     </div>
                 `;
